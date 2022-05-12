@@ -1,0 +1,26 @@
+<!-- <div class="card my-5">
+    <div class="card-body"> -->
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Reminder</th>
+            <!-- <th scope="col">Assigned Doctor</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of patients">
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.user.username }}</td>
+            <!-- <td> {{ patient.doctor.user.username }}</td> -->
+            <td>
+              <button class="btn btn-primary btn-block" [routerLink]="['/addreminder', patient.id]">
+                Add a Reminder
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <!-- </div>
+  </div> -->

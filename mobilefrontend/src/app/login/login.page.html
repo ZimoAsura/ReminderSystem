@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content slot="fixed">
+
+  <form   *ngIf="!isLoggedIn"
+  name="form"
+  (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm"
+  novalidate>
+  <ion-row>
+    <ion-col>
+      <ion-item lines="full">
+        <ion-label for="username" position="floating">Username</ion-label>
+        <ion-input 
+              type="text" 
+              name="username"
+              [(ngModel)]="form.username"
+              required></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item lines="full">
+        <ion-label for="password" position="floating">Password</ion-label>
+        <ion-input 
+        type="password"
+        name="password" 
+        [(ngModel)]="form.password"
+        required></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Sign In</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

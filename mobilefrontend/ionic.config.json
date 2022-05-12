@@ -1,0 +1,7 @@
+{
+  "name": "mobilefrontend",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
