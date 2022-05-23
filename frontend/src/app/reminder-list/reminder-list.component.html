@@ -1,32 +1,31 @@
 <!-- <div class="card my-5">
     <div class="card-body"> -->
-      <h3>Unfinished Reminders for each patient</h3>
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
+<p>Unfinished Reminders for each patient</p>
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
             <th scope="col">Patient ID</th>
-            <th scope="col">Patient Name</th>            
+            <th scope="col">Patient Name</th>
             <th scope="col">High Priority Reminder</th>
             <th scope="col">Middle Priority Reminder</th>
             <th scope="col">Low Priority Reminder</th>
             <th scope="col">History</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let reminder of reminders">
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reminder of reminders">
             <td>{{ reminder[0] }}</td>
             <td>{{ reminder[1] }}</td>
             <td>{{ reminder[2] }}</td>
             <td>{{ reminder[3] }}</td>
             <td>{{ reminder[4] }}</td>
             <td>
-              <button class="btn btn-primary btn-block" 
-              [routerLink]="['/reminder/history', reminder[0]]" routerLinkActive="router-link-active" >
-                See Reminder History
-              </button>
+                <button class="btn btn-primary btn-block" [routerLink]="['/reminder/history', reminder[0]]" routerLinkActive="router-link-active">
+          See Reminder History
+        </button>
             </td>
-          </tr>
-        </tbody>
-      </table>
-    <!-- </div>
+        </tr>
+    </tbody>
+</table>
+<!-- </div>
   </div> -->

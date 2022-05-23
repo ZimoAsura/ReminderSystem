@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200","http://localhost:8202","http://localhost:8101"})
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:8201","http://localhost:8100"})
 
 public class ReminderController {
     @Autowired

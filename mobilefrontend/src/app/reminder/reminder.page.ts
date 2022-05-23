@@ -23,7 +23,17 @@ export class ReminderPage implements OnInit {
   description: string;
   private reminder_id: string;
   private deadline: Date;
+
+  ionViewWillEnter() {
+    this.reminderService.findOne(this.reminder_id).subscribe(data => {
+      this.description = data.description;
+      this.reminder = data;
+      console.log(this.reminder.patient);
+    });
+  }
+  
   constructor(
+    private tokenService: TokenStorageService,
     public alertController: AlertController,
     private reminderService: ReminderService,
     private router: Router,
@@ -45,15 +55,19 @@ export class ReminderPage implements OnInit {
       });
     }
     else if (cur_time < this.deadline) {
-      this.alertController.create({
-        header: 'Success',
-        message: 'The reminder is finish.',
-        buttons: ['OK']
-      }).then(res => {
-        res.present();
-      });
       this.reminderService.finishReminder(this.reminder_id).subscribe(data => {
         console.log(data);
+        this.reminder.status = data.status;
+        this.alertController.create({
+          header: 'Success',
+          message: 'The reminder is finished.',
+          buttons: ['OK']
+        }).then(res => {
+          res.present();
+        });
+      }, err => {
+        console.log(err);
+        
       });
     }
     else {
@@ -67,6 +81,10 @@ export class ReminderPage implements OnInit {
     }
   }
 
+  // logout(): void {
+  //   this.tokenService.signOut();
+  //   window.location.reload();
+  // }
   
 
   ngOnInit() {

@@ -22,6 +22,7 @@
     "@ionic-native/keyboard": "^5.36.0",
     "@ionic/angular": "^6.0.0",
     "cordova-plugin-ionic-keyboard": "2.2.0",
+    "phonegap-plugin-push": "2.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
@@ -62,7 +63,8 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "phonegap-plugin-push": {}
     }
   }
 }

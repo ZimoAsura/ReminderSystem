@@ -94,9 +94,6 @@ public class AuthController {
 
 		if (strRoles == null) {
 			throw new RuntimeException("Error: Role is Empty");
-//			Role userRole = roleRepository.findByName(ERole.ROLE_PATIENT)
-//					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//			roles.add(userRole);
 		} else {
 			strRoles.forEach(role -> {
 				switch (role) {
